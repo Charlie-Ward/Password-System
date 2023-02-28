@@ -61,7 +61,7 @@ while mainLoop == True:
         elif mainMenuChoice == "1":
             time.sleep(1)
             print(clear)
-            print("Hello and Welcome to register please fill out the form below")
+            print("Hello and Welcome. To register please fill out the form below")
             while finishedReg == False:
                 print("Please enter a username")
                 regUsername = input("")
