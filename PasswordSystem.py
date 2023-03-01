@@ -110,12 +110,6 @@ while mainLoop == True:
                             print(clear)
         elif mainMenuChoice == "2":
             leaveLoop = True
-        elif mainMenuChoice == "AdminBypass":
-            LogInDone = True
-            leaveLoop = True
-            location = 4
-            print(clear)
-            time.sleep(1)
         else:
             print("Invalid Input")
             time.sleep(1)
@@ -145,43 +139,49 @@ while mainLoop == True:
                 print(clear)
             elif logInChoice == "1":
                 print(clear)
-                print("CHANGE PASSWORD")
-                print("Please input your current password")
-                currentPassword = input("")
-                if currentPassword == basePasswords[location]:
-                    correctPassword = True
-                    while correctPassword == True:
-                        print(clear)
-                        print("Password Correct")
-                        print("Please input your new password")
-                        newPassword = input("")
-                        print(clear)
-                        print("Please confirm your new password")
-                        newPasswordConfirm = input("")
-                        # Checking passwords match
-                        if newPassword == newPasswordConfirm:
-                            print(clear)
-                            print("Passwords are the same")
-                            # Updating password
-                            basePasswords[location] = newPassword
-                            print(f"Your new password is {basePasswords[location]}")
-                            time.sleep(1)
-                            print("Please press enter to return to the member menu")
-                            goHome = input("")
-                            correctPassword = False
-                            print(clear)
-                        else:
-                            print(clear)
-                            print("Passwords are not the same please try again")
-                            time.sleep(2)
-                            print(clear)
+                if baseUsernames[location] == "Admin" or baseUsernames[location] == "Default":
+                    print("The default accounts cannot be changed. Please create a new account to access this feature")
+                    time.sleep(1)
+                    print("Press enter to go back to the memeber menu")
+                    goHome = input()
                 else:
-                    print(clear)
-                    print("Password Incorrect")
-                    print("Returning to the memeber home page")
-                    print("Please press enter to return to the member menu")
-                    goHome = input("")
-                    print(clear)
+                    print("CHANGE PASSWORD")
+                    print("Please input your current password")
+                    currentPassword = input("")
+                    if currentPassword == basePasswords[location]:
+                        correctPassword = True
+                        while correctPassword == True:
+                            print(clear)
+                            print("Password Correct")
+                            print("Please input your new password")
+                            newPassword = input("")
+                            print(clear)
+                            print("Please confirm your new password")
+                            newPasswordConfirm = input("")
+                            # Checking passwords match
+                            if newPassword == newPasswordConfirm:
+                                print(clear)
+                                print("Passwords are the same")
+                                # Updating password
+                                basePasswords[location] = newPassword
+                                print(f"Your new password is {basePasswords[location]}")
+                                time.sleep(1)
+                                print("Please press enter to return to the member menu")
+                                goHome = input("")
+                                correctPassword = False
+                                print(clear)
+                            else:
+                                print(clear)
+                                print("Passwords are not the same please try again")
+                                time.sleep(2)
+                                print(clear)
+                    else:
+                        print(clear)
+                        print("Password Incorrect")
+                        print("Returning to the memeber home page")
+                        print("Please press enter to return to the member menu")
+                        goHome = input("")
+                        print(clear)
             elif logInChoice == "2":
                 print(clear)
                 print("Logged Out")
