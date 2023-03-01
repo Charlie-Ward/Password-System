@@ -4,30 +4,15 @@
 # Importing Sleep Function
 import time
 
-print("Starting...")
-time.sleep(1)
-
-print("Importing required modules")
-time.sleep(1)
-
 # Setting Up the Default Accounts
 baseUsernames = ["Default", "Admin"]
 basePasswords = ["Default", "Admin"]
 
-print("Importing default accounts")
-time.sleep(1)
-
 # Setting up the clear variable
 clear = "\n" * 100
 
-print("Setting up required variables")
-time.sleep(1)
-
 # Setting the loop to activate
 mainLoop = True
-
-print("Clearing Console")
-time.sleep(2)
 
 # Clearing the console
 print(clear)
